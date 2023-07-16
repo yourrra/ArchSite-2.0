@@ -1,0 +1,10 @@
+.notFound__wrapper {
+  min-height: calc(100vh - 251px);
+  padding-top: 150px;
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

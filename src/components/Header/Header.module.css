@@ -1,0 +1,31 @@
+.Header {
+  display: grid;
+  align-items: center;
+  padding: 13px 0;
+  gap: 35px;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (width <= 426px) {
+    z-index: 1;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Logo {
+    display: grid;
+    justify-self: center;
+    text-decoration: none;
+
+    @media (width <= 426px) {
+      display: none;
+    }
+  }
+
+  .En {
+    display: grid;
+    justify-self: end;
+
+    @media (width <= 426px) {
+      display: none;
+    }
+  }
+}

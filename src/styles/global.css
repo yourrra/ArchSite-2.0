@@ -1,0 +1,85 @@
+:root {
+  --black-color: #2e2e2e;
+  --white-color: #fff;
+  --green-color: #008a3f;
+  --yellow-color: #f5c000;
+  --gray-cokor: #6d6d6d;
+  --gray-light-cokor: #9a9a9a;
+  --font-primary: 'Spectral';
+  --shadow-white: 0 1px 10px rgb(0 0 0 / 10%);
+}
+
+html {
+  color: var(--black-color);
+  font-family: var(--font-primary), system-ui;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+body {
+  text-size-adjust: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd,
+pre,
+input,
+button,
+fieldset {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 123.6%;
+}
+
+h2 {
+  font-size: 39.06px;
+  font-weight: 600;
+  line-height: 123.6%;
+}
+
+#root {
+  min-height: 100%;
+}
+
+.wrapper {
+  max-width: 350px;
+  margin: 0 16px;
+
+  @media (width >= 768px) {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  @media (width >= 1150px) {
+    max-width: 1150px;
+  }
+}
+
+.wrapper__shadows {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  background: var(--white-color);
+}

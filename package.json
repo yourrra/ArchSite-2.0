@@ -1,0 +1,112 @@
+{
+  "name": "archsite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint:ts": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:css": "stylelint src/**/*.css",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "6.11.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@vitejs/plugin-react": "^4.0.1",
+    "autoprefixer": "^10.4.14",
+    "browserslist": "^4.21.9",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "lint-staged": "^13.2.3",
+    "postcss": "^8.4.26",
+    "postcss-load-config": "^4.0.1",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^9.0.0",
+    "prettier": "^3.0.0",
+    "simple-git-hooks": "^2.8.1",
+    "stylelint": "^15.10.1",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^4.0.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "es2020": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@typescript-eslint/recommended-requiring-type-checking",
+      "plugin:react-hooks/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module",
+      "project": true,
+      "tsconfigRootDir": "__dirname"
+    },
+    "plugins": [
+      "react-refresh",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "react-refresh/only-export-components": "warn"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSameLine": false,
+    "arrowParens": "avoid",
+    "endOfLine": "auto"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-idiomatic-order",
+      "stylelint-config-standard",
+      "stylelint-prettier/recommended"
+    ],
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "selector-class-pattern": null
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.(ts|tsx)": "pnpm run lint:ts",
+    "*.css": "pnpm run lint:css"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.2%",
+    "not dead"
+  ]
+}

@@ -1,0 +1,87 @@
+.menu {
+  opacity: 0;
+  transform: translateX(-10%);
+  transition: all 0.4s;
+  visibility: hidden;
+}
+
+.menuActive {
+  opacity: 100;
+  transition: all 0.6s;
+  visibility: visible;
+}
+
+.menuContent {
+  display: grid;
+  font-size: 16px;
+  gap: 8px;
+  grid-template-areas: 'project about contact';
+  grid-template-columns: repeat(3, 1fr);
+  justify-self: start;
+  transition: all 0.6s;
+
+  .project {
+    color: #808080;
+    font-weight: 500;
+    grid-area: project;
+    justify-self: start;
+    text-decoration: none;
+  }
+
+  .projectActive {
+    color: #2e2e2e;
+    font-weight: 500;
+    grid-area: project;
+    justify-self: start;
+    text-decoration: none;
+  }
+
+  .project:active,
+  .project:hover,
+  .project:focus {
+    color: #2e2e2e;
+  }
+
+  .aboutMe {
+    color: #808080;
+    font-weight: 500;
+    grid-area: about;
+    justify-self: center;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .aboutMe:active,
+  .aboutMe:hover,
+  .aboutMe:focus {
+    color: #2e2e2e;
+  }
+
+  .contact {
+    color: #808080;
+    font-weight: 500;
+    grid-area: contact;
+    justify-self: end;
+    text-decoration: none;
+  }
+
+  .contact:active,
+  .contact:hover,
+  .contact:focus {
+    color: #2e2e2e;
+  }
+}
+
+@media (width <= 426px) {
+  .menu {
+    opacity: 1;
+    transform: translateX(38px);
+    visibility: visible;
+  }
+
+  .menuActive {
+    opacity: 1;
+    transform: translateX(38px);
+    visibility: visible;
+  }
+}

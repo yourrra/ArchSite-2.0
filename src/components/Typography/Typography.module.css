@@ -1,0 +1,65 @@
+.isLogo {
+  color: #2e2e2e;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.isH1Extra {
+  font-size: 54px;
+  font-weight: 300;
+  line-height: 70px;
+}
+
+.isH1 {
+  font-size: 42px;
+  line-height: 54px;
+}
+
+.isH2Extra {
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 56px;
+}
+
+.isH2 {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 44px;
+}
+
+.isH3,
+.isH3Strikethrough {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.isH3Strikethrough {
+  text-decoration-line: line-through;
+}
+
+.isSmall {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.isBig {
+  font-size: 20px;
+  line-height: 34px;
+}
+
+.isNormal {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.isLink {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.isLabel {
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 16px;
+  text-transform: uppercase;
+}

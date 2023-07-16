@@ -1,0 +1,84 @@
+.footer {
+  display: grid;
+  grid-area: footer;
+  grid-template-areas: 'links info dev';
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.linkslist {
+  display: grid;
+  gap: 5px;
+  grid-area: links;
+  grid-template-areas:
+    'project'
+    'about'
+    'contact';
+  grid-template-rows: repeat(3, 15px);
+
+  .project {
+    color: black;
+    font-size: 14px;
+    grid-area: project;
+    justify-self: start;
+    text-decoration: none;
+  }
+
+  .aboutMe {
+    color: black;
+    font-size: 14px;
+    grid-area: about;
+    justify-self: start;
+    text-decoration: none;
+  }
+
+  .contact {
+    color: black;
+    font-size: 14px;
+    grid-area: contact;
+    justify-self: start;
+    text-decoration: none;
+  }
+}
+
+.infolist {
+  display: grid;
+  gap: 5px;
+  grid-area: info;
+  grid-template-areas:
+    'email'
+    'phone';
+  grid-template-rows: 15px 19px;
+
+  .emailStyle {
+    font-size: 14px;
+    grid-area: email;
+    text-align: center;
+  }
+
+  .phonelStyle {
+    grid-area: phone;
+    text-align: center;
+  }
+}
+
+.devList {
+  display: grid;
+  gap: 5px;
+  grid-area: dev;
+  grid-template-areas:
+    'devW'
+    'devN';
+  grid-template-rows: 15px 19px;
+
+  .devWord {
+    font-size: 14px;
+    grid-area: devW;
+    text-align: end;
+  }
+
+  .devName {
+    font-size: 19px;
+    grid-area: devN;
+    text-align: end;
+  }
+}
