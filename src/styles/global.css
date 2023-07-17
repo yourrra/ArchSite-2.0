@@ -50,7 +50,7 @@ li {
 
 .wrapper {
   max-width: 350px;
-  margin: 0 16px;
+  margin: 0 12.5px;
 
   @media (width >= 768px) {
     max-width: 750px;
