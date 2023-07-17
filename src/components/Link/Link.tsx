@@ -10,7 +10,6 @@ type AnchorProps = AnchorHTMLAttributes<HTMLAnchorElement>
 
 type CommonProps = {
   icon?: string
-  variant?: 'default' | 'accent'
 }
 
 type Props = PropsWithChildren<
@@ -27,26 +26,14 @@ type Props = PropsWithChildren<
     CommonProps
 >
 
-export function Link({
-  type,
-  props,
-  children,
-  icon,
-  variant = 'default',
-}: Props) {
-  const className = cn(
-    styles.link,
-    {
-      [styles[variant]]: variant,
-    },
-    props.className,
-  )
+export function Link({ type, props, children, icon }: Props) {
+  const className = cn(styles.link, props.className)
 
   if (type === 'a') {
     return (
       <a {...props} className={className}>
         <div>
-          {icon && <img src={icon} width={16} height={16} alt="" />}
+          {icon && <img src={icon} width={32} height={32} alt="" />}
           <Typography variant="link" tag="span">
             {children}
           </Typography>
@@ -58,7 +45,7 @@ export function Link({
   return (
     <ReactRouterLink {...props} className={className}>
       <div>
-        {icon && <img src={icon} width={16} height={16} alt="" />}
+        {icon && <img src={icon} width={32} height={32} alt="" />}
         <Typography variant="link" tag="span">
           {children}
         </Typography>

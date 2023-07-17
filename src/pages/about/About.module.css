@@ -11,14 +11,6 @@
 .About {
   display: flex;
   gap: 50px;
-
-  /* display: grid;
-  gap: 50px;
-  grid-template-columns: 1fr 750px;
-
-  @media (width <= 1025px) {
-    grid-template-columns: 1fr 1fr;
-  } */
 }
 
 .InfoBlock {
@@ -35,29 +27,18 @@
 }
 
 .ImgBlock {
-  width: 750px;
-  height: 855px;
+  display: none;
 
-  .Img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 10% 0;
-  }
-}
+  @media (width >= 768px) {
+    display: inline-block;
+    width: 750px;
+    height: 855px;
 
-.imgBlock {
-  width: 750px;
-  height: 530px;
-  background: url('../../img/AboutWeb.jpg');
-
-  @media (width <= 1025px) {
-    width: 350px;
-    height: 750px;
-    background: url('../../img/AboutWeb_tablet.jpg');
-  }
-
-  @media (width <= 426px) {
-    display: none;
+    .Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 65% 0;
+    }
   }
 }

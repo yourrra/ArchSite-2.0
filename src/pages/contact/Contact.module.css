@@ -7,3 +7,44 @@
     min-height: calc(100vh - 72px);
   }
 }
+
+.Contact {
+  display: flex;
+  gap: 50px;
+
+  .Text {
+    display: flex;
+    min-width: 350px;
+    flex-direction: column;
+    gap: 16px;
+
+    .Link {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    .Network {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .ImgBlock {
+    display: none;
+
+    @media (width >= 768px) {
+      display: inline-block;
+      width: 750px;
+      height: 855px;
+
+      .Img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 65% 0;
+      }
+    }
+  }
+}
