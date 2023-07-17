@@ -7,3 +7,46 @@
     min-height: calc(100vh - 72px);
   }
 }
+
+h2 {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #2e2e2e;
+  font-size: 20px;
+}
+
+p {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #3d3d3d;
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.About {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 750px;
+
+  @media (width <= 1025px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.imgBlock {
+  width: 750px;
+  height: 530px;
+  background: url('../../img/AboutWeb.jpg');
+
+  @media (width <= 1025px) {
+    width: 350px;
+    height: 750px;
+    background: url('../../img/AboutWeb_tablet.jpg');
+  }
+
+  @media (width <= 426px) {
+    display: none;
+  }
+}
