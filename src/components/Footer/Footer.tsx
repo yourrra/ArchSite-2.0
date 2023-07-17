@@ -1,28 +1,38 @@
+import { ROUTES } from '../../constants/urls'
+import { Link } from '../Link'
+import { Typography } from '../Typography'
 import styles from './Footer.module.css'
-import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
     <div className="wrapper">
-      <div className={styles.footer}>
-        <div className={styles.linkslist}>
-          <Link className={styles.project} to="/project">
+      <div className={styles.Footer}>
+        <div className={styles.Links}>
+          <Link type="link" props={{ to: ROUTES.MAIN }}>
             Project
           </Link>
-          <Link className={styles.aboutMe} to="/about">
+          <Link type="link" props={{ to: ROUTES.ABOUT }}>
             About me
           </Link>
-          <Link className={styles.contact} to="/contact">
+          <Link type="link" props={{ to: ROUTES.CONTACT }}>
             Contact
           </Link>
         </div>
-        <div className={styles.infolist}>
-          <div className={styles.emailStyle}>саня@gmail.com</div>
-          <div className={styles.phonelStyle}>+ 7 (999) 999-99-99</div>
+        <div className={styles.Info}>
+          <Link type="a" props={{ href: 'tel:+79002891404' }}>
+            8 (900) 289-14-04
+          </Link>
+          <Link type="a" props={{ href: 'mailto:alextecture@gmail.com' }}>
+            alextecture@gmail.com
+          </Link>
         </div>
-        <div className={styles.devList}>
-          <div className={styles.devWord}>Developed</div>
-          <div className={styles.devName}>Yourrra</div>
+        <div className={styles.Developed}>
+          <div>Developed</div>
+          <Link type="a" props={{ href: 'https://github.com/yourrra' }}>
+            <Typography className={styles.devName} variant="label">
+              Yourrra
+            </Typography>
+          </Link>
         </div>
       </div>
     </div>

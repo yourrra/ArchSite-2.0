@@ -1,84 +1,51 @@
-.footer {
-  display: grid;
-  grid-area: footer;
-  grid-template-areas: 'links info dev';
-  grid-template-columns: repeat(3, 1fr);
-}
+.Footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 
-.linkslist {
-  display: grid;
-  gap: 5px;
-  grid-area: links;
-  grid-template-areas:
-    'project'
-    'about'
-    'contact';
-  grid-template-rows: repeat(3, 15px);
-
-  .project {
-    color: black;
-    font-size: 14px;
-    grid-area: project;
-    justify-self: start;
-    text-decoration: none;
-  }
-
-  .aboutMe {
-    color: black;
-    font-size: 14px;
-    grid-area: about;
-    justify-self: start;
-    text-decoration: none;
-  }
-
-  .contact {
-    color: black;
-    font-size: 14px;
-    grid-area: contact;
-    justify-self: start;
-    text-decoration: none;
+  @media (width >= 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.infolist {
-  display: grid;
-  gap: 5px;
-  grid-area: info;
-  grid-template-areas:
-    'email'
-    'phone';
-  grid-template-rows: 15px 19px;
+.Links {
+  display: none;
 
-  .emailStyle {
-    font-size: 14px;
-    grid-area: email;
-    text-align: center;
-  }
-
-  .phonelStyle {
-    grid-area: phone;
-    text-align: center;
+  @media (width >= 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
-.devList {
-  display: grid;
-  gap: 5px;
-  grid-area: dev;
-  grid-template-areas:
-    'devW'
-    'devN';
-  grid-template-rows: 15px 19px;
+.Info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  order: -1;
 
-  .devWord {
-    font-size: 14px;
-    grid-area: devW;
-    text-align: end;
+  @media (width >= 768px) {
+    align-self: flex-start;
+    order: 0;
+  }
+}
+
+.Developed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+
+  @media (width >= 768px) {
+    align-items: flex-end;
+    align-self: flex-start;
+    justify-content: flex-start;
   }
 
   .devName {
-    font-size: 19px;
-    grid-area: devN;
-    text-align: end;
+    font-size: 16px;
   }
 }
