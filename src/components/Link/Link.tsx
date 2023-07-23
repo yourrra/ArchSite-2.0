@@ -22,6 +22,10 @@ type Props = PropsWithChildren<
         type: 'link'
         props: LinkProps
       }
+    | {
+        type: 'icon'
+        props: LinkProps
+      }
   ) &
     CommonProps
 >
@@ -33,22 +37,31 @@ export function Link({ type, props, children, icon }: Props) {
     return (
       <a {...props} className={className}>
         <div>
-          {icon && <img src={icon} width={32} height={32} alt="" />}
+          {icon && <img src={icon} width={32} height={32} alt="icon" />}
           <Typography variant="link" tag="span">
             {children}
           </Typography>
         </div>
       </a>
     )
+  } else if (type === 'link') {
+    return (
+      <ReactRouterLink {...props} className={className}>
+        <div>
+          {icon && <img src={icon} width={32} height={32} alt="icon" />}
+          <Typography variant="link" tag="span">
+            {children}
+          </Typography>
+        </div>
+      </ReactRouterLink>
+    )
   }
 
   return (
     <ReactRouterLink {...props} className={className}>
       <div>
-        {icon && <img src={icon} width={32} height={32} alt="" />}
-        <Typography variant="link" tag="span">
-          {children}
-        </Typography>
+        {icon && <img src={icon} width={32} height={32} alt="icon" />}
+        {children}
       </div>
     </ReactRouterLink>
   )

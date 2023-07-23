@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import styles from './Modal.module.css'
 import cn from 'classnames'
@@ -12,27 +12,21 @@ type Props = {
 }
 
 export const Modal: FC<Props> = ({ name, year, imgBig, isOpen, onClose }) => {
-  // Создаем корневой узел для портала
   const modalRoot = document.createElement('div')
   modalRoot.setAttribute('id', 'modal-root')
 
   useEffect(() => {
-    // Добавляем корневой узел в DOM при монтировании компонента
     document.body.appendChild(modalRoot)
 
-    // Удаляем корневой узел из DOM при размонтировании компонента
     return () => {
       document.body.removeChild(modalRoot)
     }
   }, [modalRoot])
 
-  // Если модальное окно не открыто, возвращаем null
   if (!isOpen) return null
 
-  // Проверяем ширину экрана
   const isScreenSmall = window.innerWidth < 450
 
-  // Если ширина экрана меньше 500px, не открываем модальное окно
   if (isScreenSmall) return null
 
   return ReactDOM.createPortal(
@@ -58,6 +52,4 @@ export const Modal: FC<Props> = ({ name, year, imgBig, isOpen, onClose }) => {
     </div>,
     modalRoot,
   )
-
-  // Монтируем модальное окно в портал
 }

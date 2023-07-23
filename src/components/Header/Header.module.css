@@ -2,7 +2,6 @@
   max-width: 350px;
   margin: 0 12.5px;
   margin: 0 auto;
-  margin-bottom: 50px;
 
   @media (width >= 768px) {
     max-width: 750px;
@@ -14,11 +13,10 @@
 }
 
 .Header {
-  display: grid;
+  display: flex;
   align-items: center;
-  padding: 5px 0;
-  gap: 35px;
-  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  padding: 8px 0;
 
   @media (width <= 426px) {
     z-index: 1;
@@ -28,6 +26,7 @@
 
   .Logo {
     display: grid;
+    order: -1;
     justify-self: center;
     text-decoration: none;
 
@@ -36,12 +35,22 @@
     }
   }
 
-  .En {
-    display: grid;
-    justify-self: end;
+  .LogoMobile {
+    order: -1;
 
-    @media (width <= 426px) {
+    @media (width >= 768px) {
       display: none;
     }
+  }
+}
+
+.HeaderMobile {
+  display: none;
+
+  @media (width <= 426px) {
+    z-index: 1;
+    display: flex;
+    padding: 13px 0;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

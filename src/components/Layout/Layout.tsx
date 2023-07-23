@@ -11,7 +11,7 @@ type Props = {
 
 export function Layout({ header, footer }: Props) {
   return (
-    <div className={styles.Layout}>
+    <div>
       {header === 'hidden' ? null : header || <Header />}
       <main className={styles.Main}>
         <Outlet />

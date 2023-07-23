@@ -10,6 +10,7 @@ export const BurgerMenu = () => {
 
   return (
     <div className={styles.Burger}>
+      <Menu active={menuActive} />
       <button
         type="button"
         className={buttonActive ? styles.ButtonActive : styles.ButtonStandard}
@@ -23,7 +24,6 @@ export const BurgerMenu = () => {
           onClick={() => setMenuActive(!menuActive)}
         />
       </button>
-      <Menu active={menuActive} />
     </div>
   )
 }

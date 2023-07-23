@@ -231,17 +231,19 @@ export function Main() {
   ]
 
   return (
-    <div className={styles.Renders}>
-      {previewCard
-        .map(card => (
-          <Card
-            preview={card.preview}
-            name={card.name}
-            year={card.year}
-            fullRes={card.fullRes}
-          />
-        ))
-        .reverse()}
+    <div className="Wrapper">
+      <div className={styles.Renders}>
+        {previewCard
+          .map(card => (
+            <Card
+              preview={card.preview}
+              name={card.name}
+              year={card.year}
+              fullRes={card.fullRes}
+            />
+          ))
+          .reverse()}
+      </div>
     </div>
   )
 }

@@ -1,11 +1,20 @@
 import { ROUTES } from '../../constants/urls'
 import { Link } from '../Link'
-import alextecture from '../../assets/alextecture.svg'
+import logoDesk from '../../assets/alextecture.svg'
+import logoMob from '../../../public/favicon.svg'
 
-export const Logo = () => {
+type Props = {
+  variant?: 'desktop' | 'mobile'
+}
+
+export const Logo = ({ variant = 'desktop' }: Props) => {
   return (
-    <Link type="link" props={{ to: ROUTES.MAIN }}>
-      <img src={alextecture} alt="alextecture" height={34} />
+    <Link type="icon" props={{ to: ROUTES.MAIN }}>
+      {variant === 'desktop' ? (
+        <img src={logoDesk} alt="Logo" height={34} />
+      ) : (
+        <img src={logoMob} alt="Logo" height={25} width={25} />
+      )}
     </Link>
   )
 }

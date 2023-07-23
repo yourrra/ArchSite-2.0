@@ -14,11 +14,6 @@
     height: 20px;
     transform: rotate(0deg);
     transition: all 0.4s;
-
-    @media (width <= 426px) {
-      transform: rotate(90deg);
-      transition: all 0.4s;
-    }
   }
 
   .ButtonActive {

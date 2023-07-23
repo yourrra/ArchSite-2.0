@@ -10,10 +10,12 @@ export const Header = () => {
         <div className={styles.Wrapper}>
           <header className={styles.Header}>
             <BurgerMenu />
+            <div className={styles.LogoMobile}>
+              <Logo variant="mobile" />
+            </div>
             <div className={styles.Logo}>
               <Logo />
             </div>
-            <div className={styles.En}>EN</div>
           </header>
         </div>
       </div>

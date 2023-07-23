@@ -1,6 +1,6 @@
 .Menu {
   opacity: 0;
-  transform: translateX(-10%);
+  transform: translateX(10%);
   transition: all 0.4s;
   visibility: hidden;
 }
@@ -56,19 +56,5 @@
   .Contact:hover,
   .Contact:focus {
     color: var(--black-color);
-  }
-}
-
-@media (width <= 426px) {
-  .Menu {
-    opacity: 1;
-    transform: translateX(63px);
-    visibility: visible;
-  }
-
-  .MenuActive {
-    opacity: 1;
-    transform: translateX(63px);
-    visibility: visible;
   }
 }

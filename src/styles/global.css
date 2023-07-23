@@ -57,8 +57,18 @@ li {
   height: 100%;
 }
 
+.Wrapper {
+  min-height: calc(100vh - 122px);
+  padding-top: 100px;
+  padding-bottom: 50px;
+
+  @media (width >= 768px) {
+    min-height: calc(100vh - 72px);
+  }
+}
+
 .wrapper__shadows {
-  /* position: fixed; */
+  position: fixed;
   z-index: 1;
   top: 0;
   width: 100%;
