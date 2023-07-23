@@ -4,7 +4,7 @@ import { Typography } from '../Typography'
 import styles from './TextBlock.module.css'
 
 type Props = PropsWithChildren<{
-  title: string
+  title?: string
 }>
 
 export const TextBlock = ({ title, children }: Props) => {

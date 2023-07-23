@@ -14,7 +14,7 @@ export const Picture = memo(
       return (
         <picture>
           <source type="image/avif" srcSet={`${img.slice(0, -4)}.avif`} />
-          <source type="image/webp" srcSet={`${img.slice(0, -4)}webp`} />
+          <source type="image/webp" srcSet={`${img.slice(0, -4)}.webp`} />
           <img
             className={cn(
               {

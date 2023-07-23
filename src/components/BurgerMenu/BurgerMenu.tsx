@@ -10,20 +10,20 @@ export const BurgerMenu = () => {
 
   return (
     <div className={styles.Burger}>
-      <div
-        className={buttonActive ? styles.ButtonActive : styles.ButtonStandart}
+      <button
+        type="button"
+        className={buttonActive ? styles.ButtonActive : styles.ButtonStandard}
         onClick={() => setButtonActive(!buttonActive)}
       >
         <img
           width={20}
           height={20}
           src={burger}
-          alt="burger"
-          className={styles.BurgerButton}
+          alt="button burger-menu"
           onClick={() => setMenuActive(!menuActive)}
         />
-      </div>
-      <Menu active={menuActive} setActive={setMenuActive} />
+      </button>
+      <Menu active={menuActive} />
     </div>
   )
 }

@@ -1,15 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { ROUTES } from './constants/urls'
-import { Root } from './Root'
 import { NotFound } from './pages/404/404'
 import { Main } from './pages/main'
 import { About } from './pages/about'
 import { Contact } from './pages/contact'
+import { Layout } from './components/Layout'
 
 export const router = createBrowserRouter([
   {
     path: ROUTES.MAIN,
-    element: <Root />,
+    element: <Layout />,
     errorElement: <NotFound />,
     children: [
       {

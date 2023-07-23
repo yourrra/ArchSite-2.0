@@ -1,0 +1,19 @@
+.Layout {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto 1fr auto;
+}
+
+.Main {
+  max-width: 350px;
+  margin: 0 12.5px;
+  margin: 0 auto;
+
+  @media (width >= 768px) {
+    max-width: 750px;
+  }
+
+  @media (width >= 1150px) {
+    max-width: 1150px;
+  }
+}

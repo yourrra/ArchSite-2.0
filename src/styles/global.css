@@ -2,9 +2,10 @@
   --black-color: #2e2e2e;
   --dark-color: #3d3d3d;
   --white-color: #fff;
-  --gray-cokor: #808080;
-  --gray-light-cokor: #9a9a9a;
+  --gray-cokor: #5a5a5a;
+  --gray-light-cokor: #888;
   --font-primary: 'Spectral';
+  --black-shadow: 0 1px 25px rgb(0 0 0 / 35%);
 }
 
 html {
@@ -17,6 +18,10 @@ html {
 
 body {
   text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
 
 body,
@@ -40,30 +45,20 @@ fieldset {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 li {
   list-style-type: none;
 }
 
 #root {
-  min-height: 100%;
-}
-
-.wrapper {
-  max-width: 350px;
-  margin: 0 12.5px;
-
-  @media (width >= 768px) {
-    max-width: 750px;
-    margin: 0 auto;
-  }
-
-  @media (width >= 1150px) {
-    max-width: 1150px;
-  }
+  height: 100%;
 }
 
 .wrapper__shadows {
-  position: fixed;
+  /* position: fixed; */
   z-index: 1;
   top: 0;
   width: 100%;

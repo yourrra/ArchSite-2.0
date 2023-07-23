@@ -1,87 +1,74 @@
-.menu {
+.Menu {
   opacity: 0;
   transform: translateX(-10%);
   transition: all 0.4s;
   visibility: hidden;
 }
 
-.menuActive {
+.MenuActive {
   opacity: 100;
   transition: all 0.6s;
   visibility: visible;
 }
 
-.menuContent {
-  display: grid;
+.MenuContent {
+  --font-weight: 500;
+
+  display: flex;
   font-size: 16px;
   gap: 8px;
-  grid-template-areas: 'project about contact';
-  grid-template-columns: repeat(3, 1fr);
-  justify-self: start;
   transition: all 0.6s;
 
-  .project {
-    color: #808080;
-    font-weight: 500;
-    grid-area: project;
-    justify-self: start;
-    text-decoration: none;
+  .Project {
+    color: var(--gray-light-cokor);
+    font-weight: var(--font-weight);
   }
 
-  .projectActive {
-    color: #2e2e2e;
-    font-weight: 500;
-    grid-area: project;
-    justify-self: start;
-    text-decoration: none;
+  .ProjectActive {
+    color: var(--black-color);
+    font-weight: var(--font-weight);
   }
 
-  .project:active,
-  .project:hover,
-  .project:focus {
-    color: #2e2e2e;
+  .Project:active,
+  .Project:hover,
+  .Project:focus {
+    color: var(--black-color);
   }
 
-  .aboutMe {
-    color: #808080;
-    font-weight: 500;
-    grid-area: about;
-    justify-self: center;
-    text-decoration: none;
+  .About {
+    color: var(--gray-light-cokor);
+    font-weight: var(--font-weight);
     white-space: nowrap;
   }
 
-  .aboutMe:active,
-  .aboutMe:hover,
-  .aboutMe:focus {
-    color: #2e2e2e;
+  .About:active,
+  .About:hover,
+  .About:focus {
+    color: var(--black-color);
   }
 
-  .contact {
-    color: #808080;
-    font-weight: 500;
-    grid-area: contact;
-    justify-self: end;
-    text-decoration: none;
+  .Contact {
+    color: var(--gray-light-cokor);
+    font-weight: var(--font-weight);
   }
 
-  .contact:active,
-  .contact:hover,
-  .contact:focus {
-    color: #2e2e2e;
+  .Contact:active,
+  .Contact:hover,
+  .Contact:focus {
+    color: var(--black-color);
   }
 }
 
 @media (width <= 426px) {
-  .menu {
+  .Menu {
     opacity: 1;
-    transform: translateX(38px);
+    transform: translateX(63px);
     visibility: visible;
   }
 
-  .menuActive {
+  .MenuActive {
     opacity: 1;
-    transform: translateX(38px);
+    transform: translateX(63px);
     visibility: visible;
   }
 }

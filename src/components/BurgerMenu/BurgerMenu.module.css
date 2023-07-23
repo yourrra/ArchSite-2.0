@@ -1,16 +1,15 @@
 .Burger {
-  display: grid;
+  display: flex;
   align-items: center;
-  justify-content: center;
   gap: 20px;
-  grid-template-columns: 20px 1fr;
-  justify-self: start;
 
-  .BurgerButton {
+  .ButtonStandard,
+  .ButtonActive {
+    all: unset;
     cursor: pointer;
   }
 
-  .ButtonStandart {
+  .ButtonStandard {
     width: 20px;
     height: 20px;
     transform: rotate(0deg);
