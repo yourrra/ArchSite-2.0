@@ -28,6 +28,8 @@ RUN apk add wget
 
 ADD ./init-letsencrypt.sh /
 
+RUN chmod +x init-letsencrypt.sh
+
 RUN ./init-letsencrypt.sh
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
