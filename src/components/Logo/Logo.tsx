@@ -1,7 +1,7 @@
 import { ROUTES } from '../../constants/urls'
 import { Link } from '../Link'
 import logoDesk from '../../assets/alextecture.svg'
-import logoMob from '../../../public/favicon.svg'
+import logoMob from '../../assets/favicon.svg'
 
 type Props = {
   variant?: 'desktop' | 'mobile'
