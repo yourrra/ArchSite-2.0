@@ -24,12 +24,7 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 RUN apk add certbot
-RUN apk add wget
 
-ADD ./init-letsencrypt.sh /
-
-RUN chmod +x init-letsencrypt.sh
-
-RUN ./init-letsencrypt.sh
+RUN certbot --nginx -d alextecture.com -d www.alextecture.com
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
