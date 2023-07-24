@@ -1,12 +1,68 @@
 import { Card } from '../../components/Card'
 import styles from './Main.module.css'
 
-import WinterCabinPr from '../../assets/Winter cabin-2019_p_600px.jpg'
-import WinterCabinFl from '../../assets/Winter cabin-2019_2k.jpg'
+import WinterCabinPr from '../../assets/Winter-cabin-2019_p_600px.jpg'
+import WinterCabinFl from '../../assets/Winter-cabin-2019_2k.jpg'
 import SadovyePr from '../../assets/Sadovye-2020_p_600px.jpg'
 import SadovyeFl from '../../assets/Sadovye-2020_2k.jpg'
 import SamaraPr from '../../assets/Samara-2020_p_600px.jpg'
 import SamaraFl from '../../assets/Samara-2020_2k.jpg'
+import UfaPr from '../../assets/Ufa-2020_p_600px.jpg'
+import UfaFl from '../../assets/Ufa-2020_2k.jpg'
+import AtlasPr from '../../assets/Atlas-2021_p_600px.jpg'
+import AtlasFl from '../../assets/Atlas-2021_2k.jpg'
+import AvainPr from '../../assets/Avain-2021_p_600px.jpg'
+import AvainFl from '../../assets/Avain-2021_2k.jpg'
+import GreenYardPr from '../../assets/Green-yard-2021_p_600px.jpg'
+import GreenYardFl from '../../assets/Green-yard-2021_2k.jpg'
+import HimkiPr from '../../assets/Himki-2021_p_600px.jpg'
+import HimkiFl from '../../assets/Himki-2021_2k.jpg'
+import FishingPr from '../../assets/Ice-fishing-2021_p_600px.jpg'
+import FishingFl from '../../assets/Ice-fishing-2021_2k.jpg'
+import KonakovoPr from '../../assets/Konakovo-2021_p_600px.jpg'
+import KonakovoFl from '../../assets/Konakovo-2021_2k.jpg'
+import NarodnogoOpolcheniyaPr from '../../assets/Narodnogo-opolcheniya-2021_p_600px.jpg'
+import NarodnogoOpolcheniyaFl from '../../assets/Narodnogo-opolcheniya-2021_2k.jpg'
+import RetailStreetPr from '../../assets/Retail-street-2021_p_600px.jpg'
+import RetailStreetFl from '../../assets/Retail-street-2021_2k.jpg'
+import RoadToTheBridgePr from '../../assets/Road-to-the-bridge-2021_p_600px.jpg'
+import RoadToTheBridgeFl from '../../assets/Road-to-the-bridge-2021_2k.jpg'
+import SahalinPr from '../../assets/Sahalin-2021_p_600px.jpg'
+import SahalinFl from '../../assets/Sahalin-2021_2k.jpg'
+import SportsCenterPr from '../../assets/Sports-center-2021_p_600px.jpg'
+import SportsCenterfL from '../../assets/Sports-center-2021_2k.jpg'
+import VavilovaPr from '../../assets/Vavilova-2021_p_600px.jpg'
+import VavilovaFl from '../../assets/Vavilova-2021_2k.jpg'
+import Vavilova2Pr from '../../assets/Vavilova-2-2021_p_600px.jpg'
+import Vavilova2Fl from '../../assets/Vavilova-2-2021_2k.jpg'
+import VladivostokPr from '../../assets/Vladivostok-2021_p_600px.jpg'
+import VladivostokFl from '../../assets/Vladivostok-2021_2k.jpg'
+import ChatswoodPr from '../../assets/Chatswood-2022_p_600px.jpg'
+import ChatswoodFl from '../../assets/Chatswood-2022_2k.jpg'
+import DskPr from '../../assets/DSK-2022_p_600px.jpg'
+import DskFl from '../../assets/DSK-2022_2k.jpg'
+import HotelPr from '../../assets/Hotel-2022_p_600px.jpg'
+import HotelFl from '../../assets/Hotel-2022_2k.jpg'
+import OasisPr from '../../assets/Oasis-2022_p_600px.jpg'
+import OasisFl from '../../assets/Oasis-2022_2k.jpg'
+import ObydenskiPr from '../../assets/Obydenskiy-2022_p_600px.jpg'
+import ObydenskiFl from '../../assets/Obydenskiy-2022_2k.jpg'
+import OfficeCenterPr from '../../assets/Office-center-2022_p_600px.jpg'
+import OfficeCenterFl from '../../assets/Office-center-2022_2k.jpg'
+import SnakePr from '../../assets/Snake-2022_p_600px.jpg'
+import SnakeFl from '../../assets/Snake-2022_2k.jpg'
+import StreetsOfMoscowPr from '../../assets/StreetsofMoscow-2022_p_600px.jpg'
+import StreetsOfMoscowFl from '../../assets/StreetsofMoscow-2022_2k.jpg'
+import TatarstanPr from '../../assets/Tatarstan-2022_p_600px.jpg'
+import TatarstanFl from '../../assets/Tatarstan-2022_2k.jpg'
+import TheHillPr from '../../assets/THE-HILL-2022_p_600px.jpg'
+import TheHillFl from '../../assets/THE-HILL-2022_2k.jpg'
+import TrioBoxHillPr from '../../assets/TRIO-BOX-Hill-2022_p_600px.jpg'
+import TrioBoxHillFl from '../../assets/TRIO-BOX-Hill-2022_2k.jpg'
+import ExtinctionMuseumPr from '../../assets/ExtinctionMuseum-2023_p_600px.jpg'
+import ExtinctionMuseumFl from '../../assets/ExtinctionMuseum-2023_2k.jpg'
+import ResedentialComplexPr from '../../assets/Resedentialcomplex-2023_p_600px.jpg'
+import ResedentialComplexFl from '../../assets/Resedentialcomplex-2023_2k.jpg'
 
 export function Main() {
   const previewCard = [
@@ -31,203 +87,202 @@ export function Main() {
       year: 2020,
       fullRes: SamaraFl,
     },
-    // {
-    //   id: 4,
-    //   img: require('../../img/preview/2020/Ufa_2020_p_600px.jpg'),
-    //   name: 'Ufa',
-    //   year: 2020,
-    //   imgBig: require('../../img/fullResolution/2020/Ufa_2020_2k.jpg'),
-    // },
-    // {
-    //   id: 5,
-    //   img: require('../../img/preview/2021/Atlas_2021_p_600px.jpg'),
-    //   name: 'Atlas',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Atlas_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 6,
-    //   img: require('../../img/preview/2021/Avain_2021_p_600px.jpg'),
-    //   name: 'Avain',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Avain_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 7,
-    //   img: require('../../img/preview/2021/Green_yard_2021_p_600px.jpg'),
-    //   name: 'Green Yard',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Green_yard_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 8,
-    //   img: require('../../img/preview/2021/Himki_2021_p_600px.jpg'),
-    //   name: 'Himki',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Himki_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 9,
-    //   img: require('../../img/preview/2021/Ice_fishing_2021_p_600px.jpg'),
-    //   name: 'Ice Fishing',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Ice_fishing_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 10,
-    //   img: require('../../img/preview/2021/Konakovo_2021_p_600px.jpg'),
-    //   name: 'Konakovo',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Konakovo_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 11,
-    //   img: require('../../img/preview/2021/Narodnogo_opolcheniya_2021_p_600px.jpg'),
-    //   name: 'Narodnogo Opolcheniya',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Narodnogo_opolcheniya_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 12,
-    //   img: require('../../img/preview/2021/Retail_street_2021_p_600px.jpg'),
-    //   name: 'Retail Street',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Retail_street_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 13,
-    //   img: require('../../img/preview/2021/Road_to_the_bridge_2021_p_600px.jpg'),
-    //   name: 'Road to the Bridge',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Road_to_the_bridge_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 14,
-    //   img: require('../../img/preview/2021/Sahalin_2021_p_600px.jpg'),
-    //   name: 'Sahalin',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Sahalin_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 15,
-    //   img: require('../../img/preview/2021/Sports_center_2021_p_600px.jpg'),
-    //   name: 'Sports Center',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Sports_center_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 16,
-    //   img: require('../../img/preview/2021/Vavilova_2_2021_p_600px.jpg'),
-    //   name: 'Vavilova',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Vavilova_2_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 17,
-    //   img: require('../../img/preview/2021/Vavilova_2021_p_600px.jpg'),
-    //   name: 'Vavilova',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Vavilova_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 18,
-    //   img: require('../../img/preview/2021/Vladivostok_2021_p_600px.jpg'),
-    //   name: 'Vladivostok',
-    //   year: 2021,
-    //   imgBig: require('../../img/fullResolution/2021/Vladivostok_2021_2k.jpg'),
-    // },
-    // {
-    //   id: 19,
-    //   img: require('../../img/preview/2022/Chatswood_2022_p_600px.jpg'),
-    //   name: 'Chatswood',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/Chatswood_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 20,
-    //   img: require('../../img/preview/2022/DSK_2022_p_600px.jpg'),
-    //   name: 'DSK',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/DSK_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 21,
-    //   img: require('../../img/preview/2022/Hotel_2022_p_600px.jpg'),
-    //   name: 'Hotel',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/Hotel_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 22,
-    //   img: require('../../img/preview/2022/Oasis_2022_p_600px.jpg'),
-    //   name: 'Oasis',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/Oasis_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 23,
-    //   img: require('../../img/preview/2022/Obydenskiy_2022_p_600px.jpg'),
-    //   name: 'Obydenski',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/Obydenskiy_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 24,
-    //   img: require('../../img/preview/2022/Office_center_2022_p_600px.jpg'),
-    //   name: 'Office Center',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/Office_center_2022_2k.jpg'),
-    // },
-
-    // {
-    //   id: 25,
-    //   img: require('../../img/preview/2022/Snake_2022_p_600px.jpg'),
-    //   name: 'Snake',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/Snake_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 26,
-    //   img: require('../../img/preview/2022/Streets_of_Moscow_2022_p_600px.jpg'),
-    //   name: 'Streets of Moscow',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/Streets_of_Moscow_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 27,
-    //   img: require('../../img/preview/2022/Tatarstan_2022_p_600px.jpg'),
-    //   name: 'Tatarstan',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/Tatarstan_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 28,
-    //   img: require('../../img/preview/2022/THE_HILL_2022_p_600px.jpg'),
-    //   name: 'The Hill',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/THE_HILL_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 29,
-    //   img: require('../../img/preview/2022/TRIO_BOX_Hill_2022_p_600px.jpg'),
-    //   name: 'Trio Box Hill',
-    //   year: 2022,
-    //   imgBig: require('../../img/fullResolution/2022/TRIO_BOX_Hill_2022_2k.jpg'),
-    // },
-    // {
-    //   id: 30,
-    //   img: require('../../img/preview/2023/Extinction_Museum_2023_p_600px.jpg'),
-    //   name: 'Extinction Museum',
-    //   year: 2023,
-    //   imgBig: require('../../img/fullResolution/2023/Extinction_Museum_2023_2k.jpg'),
-    // },
-    // {
-    //   id: 31,
-    //   img: require('../../img/preview/2023/Resedential_complex_2023_p_600px.jpg'),
-    //   name: 'Resedential Complex',
-    //   year: 2023,
-    //   imgBig: require('../../img/fullResolution/2023/Resedential_complex_2023_2k.jpg'),
-    // },
+    {
+      id: 4,
+      preview: UfaPr,
+      name: 'Ufa',
+      year: 2020,
+      fullRes: UfaFl,
+    },
+    {
+      id: 5,
+      preview: AtlasPr,
+      name: 'Atlas',
+      year: 2021,
+      fullRes: AtlasFl,
+    },
+    {
+      id: 6,
+      preview: AvainPr,
+      name: 'Avain',
+      year: 2021,
+      fullRes: AvainFl,
+    },
+    {
+      id: 7,
+      preview: GreenYardPr,
+      name: 'Green Yard',
+      year: 2021,
+      fullRes: GreenYardFl,
+    },
+    {
+      id: 8,
+      preview: HimkiPr,
+      name: 'Himki',
+      year: 2021,
+      fullRes: HimkiFl,
+    },
+    {
+      id: 9,
+      preview: FishingPr,
+      name: 'Ice Fishing',
+      year: 2021,
+      fullRes: FishingFl,
+    },
+    {
+      id: 10,
+      preview: KonakovoPr,
+      name: 'Konakovo',
+      year: 2021,
+      fullRes: KonakovoFl,
+    },
+    {
+      id: 11,
+      preview: NarodnogoOpolcheniyaPr,
+      name: 'Narodnogo Opolcheniya',
+      year: 2021,
+      fullRes: NarodnogoOpolcheniyaFl,
+    },
+    {
+      id: 12,
+      preview: RetailStreetPr,
+      name: 'Retail Street',
+      year: 2021,
+      fullRes: RetailStreetFl,
+    },
+    {
+      id: 13,
+      preview: RoadToTheBridgePr,
+      name: 'Road to the Bridge',
+      year: 2021,
+      fullRes: RoadToTheBridgeFl,
+    },
+    {
+      id: 14,
+      preview: SahalinPr,
+      name: 'Sahalin',
+      year: 2021,
+      fullRes: SahalinFl,
+    },
+    {
+      id: 15,
+      preview: SportsCenterPr,
+      name: 'Sports Center',
+      year: 2021,
+      fullRes: SportsCenterfL,
+    },
+    {
+      id: 16,
+      preview: VavilovaPr,
+      name: 'Vavilova',
+      year: 2021,
+      fullRes: VavilovaFl,
+    },
+    {
+      id: 17,
+      preview: Vavilova2Pr,
+      name: 'Vavilova',
+      year: 2021,
+      fullRes: Vavilova2Fl,
+    },
+    {
+      id: 18,
+      preview: VladivostokPr,
+      name: 'Vladivostok',
+      year: 2021,
+      fullRes: VladivostokFl,
+    },
+    {
+      id: 19,
+      preview: ChatswoodPr,
+      name: 'Chatswood',
+      year: 2022,
+      fullRes: ChatswoodFl,
+    },
+    {
+      id: 20,
+      preview: DskPr,
+      name: 'DSK',
+      year: 2022,
+      fullRes: DskFl,
+    },
+    {
+      id: 21,
+      preview: HotelPr,
+      name: 'Hotel',
+      year: 2022,
+      fullRes: HotelFl,
+    },
+    {
+      id: 22,
+      preview: OasisPr,
+      name: 'Oasis',
+      year: 2022,
+      fullRes: OasisFl,
+    },
+    {
+      id: 23,
+      preview: ObydenskiPr,
+      name: 'Obydenski',
+      year: 2022,
+      fullRes: ObydenskiFl,
+    },
+    {
+      id: 24,
+      preview: OfficeCenterPr,
+      name: 'Office Center',
+      year: 2022,
+      fullRes: OfficeCenterFl,
+    },
+    {
+      id: 25,
+      preview: SnakePr,
+      name: 'Snake',
+      year: 2022,
+      fullRes: SnakeFl,
+    },
+    {
+      id: 26,
+      preview: StreetsOfMoscowPr,
+      name: 'Streets of Moscow',
+      year: 2022,
+      fullRes: StreetsOfMoscowFl,
+    },
+    {
+      id: 27,
+      preview: TatarstanPr,
+      name: 'Tatarstan',
+      year: 2022,
+      fullRes: TatarstanFl,
+    },
+    {
+      id: 28,
+      preview: TheHillPr,
+      name: 'The Hill',
+      year: 2022,
+      fullRes: TheHillFl,
+    },
+    {
+      id: 29,
+      preview: TrioBoxHillPr,
+      name: 'Trio Box Hill',
+      year: 2022,
+      fullRes: TrioBoxHillFl,
+    },
+    {
+      id: 30,
+      preview: ExtinctionMuseumPr,
+      name: 'Extinction Museum',
+      year: 2023,
+      fullRes: ExtinctionMuseumFl,
+    },
+    {
+      id: 31,
+      preview: ResedentialComplexPr,
+      name: 'Resedential Complex',
+      year: 2023,
+      fullRes: ResedentialComplexFl,
+    },
   ]
 
   return (

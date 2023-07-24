@@ -1,7 +1,6 @@
-import { useState } from 'react'
-// import { Link } from '../Link'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { ROUTES } from '../../constants/urls'
+import cn from 'classnames'
 
 import styles from './Menu.module.css'
 
@@ -10,7 +9,17 @@ type Props = {
 }
 
 export const Menu = ({ active }: Props) => {
-  const [blowingActive, setProjectActive] = useState(true)
+  const location = useLocation()
+  let currentPage
+  if (location.pathname === ROUTES.MAIN) {
+    currentPage = 'main'
+  } else if (location.pathname === ROUTES.ABOUT) {
+    currentPage = 'about'
+  } else if (location.pathname === ROUTES.CONTACT) {
+    currentPage = 'contact'
+  } else {
+    currentPage = 'other'
+  }
 
   return (
     <nav className={active ? styles.MenuActive : styles.Menu}>
@@ -18,7 +27,9 @@ export const Menu = ({ active }: Props) => {
         <li>
           <Link
             to={ROUTES.MAIN}
-            className={blowingActive ? styles.ProjectActive : styles.Project}
+            className={cn(styles.Link, {
+              [styles.LinkActive]: currentPage === 'main',
+            })}
           >
             Project
           </Link>
@@ -26,10 +37,9 @@ export const Menu = ({ active }: Props) => {
         <li>
           <Link
             to={ROUTES.ABOUT}
-            className={styles.About}
-            onClick={() =>
-              setProjectActive(blowingActive ? !blowingActive : blowingActive)
-            }
+            className={cn(styles.Link, {
+              [styles.LinkActive]: currentPage === 'about',
+            })}
           >
             About
           </Link>
@@ -37,10 +47,9 @@ export const Menu = ({ active }: Props) => {
         <li>
           <Link
             to={ROUTES.CONTACT}
-            className={styles.Contact}
-            onClick={() =>
-              setProjectActive(blowingActive ? !blowingActive : blowingActive)
-            }
+            className={cn(styles.Link, {
+              [styles.LinkActive]: currentPage === 'contact',
+            })}
           >
             Contact
           </Link>
