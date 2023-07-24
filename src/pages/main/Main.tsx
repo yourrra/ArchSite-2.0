@@ -244,10 +244,10 @@ export function Main() {
     },
     {
       id: 26,
-      preview: StreetsOfMoscowPr,
-      name: 'Streets of Moscow',
-      year: 2022,
-      fullRes: StreetsOfMoscowFl,
+      preview: ResedentialComplexPr,
+      name: 'Resedential Complex',
+      year: 2023,
+      fullRes: ResedentialComplexFl,
     },
     {
       id: 27,
@@ -279,10 +279,10 @@ export function Main() {
     },
     {
       id: 31,
-      preview: ResedentialComplexPr,
-      name: 'Resedential Complex',
-      year: 2023,
-      fullRes: ResedentialComplexFl,
+      preview: StreetsOfMoscowPr,
+      name: 'Streets of Moscow',
+      year: 2022,
+      fullRes: StreetsOfMoscowFl,
     },
   ]
 

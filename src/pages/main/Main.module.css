@@ -20,7 +20,7 @@
     grid-template-rows: repeat(auto, 350px);
   }
 
-  @media (width <= 426px) {
+  @media (width <= 500px) {
     grid-template-columns: repeat(1, 350px);
     grid-template-rows: repeat(auto, 350px);
   }

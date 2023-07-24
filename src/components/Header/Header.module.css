@@ -30,7 +30,7 @@
     justify-self: center;
     text-decoration: none;
 
-    @media (width <= 426px) {
+    @media (width <= 500px) {
       display: none;
     }
   }
@@ -47,7 +47,7 @@
 .HeaderMobile {
   display: none;
 
-  @media (width <= 426px) {
+  @media (width <= 500px) {
     z-index: 1;
     display: flex;
     padding: 13px 0;

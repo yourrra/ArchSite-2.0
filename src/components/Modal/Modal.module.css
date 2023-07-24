@@ -7,10 +7,9 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  animation: overlayShow 700ms ease-in-out;
+  animation: overlay-show 700ms ease-in-out;
   backdrop-filter: blur(5px);
   background-color: rgb(154 154 154 / 70%);
-  inset: 0;
 }
 
 .WrapperModal {
@@ -23,7 +22,7 @@
 
 .Content {
   height: 800px;
-  animation: contentShow 450ms ease-out;
+  animation: content-show 450ms ease-out;
   box-shadow: var(--black-shadow);
 
   @media (width <= 1025px) {
@@ -46,7 +45,7 @@
   }
 }
 
-@keyframes overlayShow {
+@keyframes overlay-show {
   from {
     opacity: 0;
   }
@@ -56,7 +55,7 @@
   }
 }
 
-@keyframes contentShow {
+@keyframes content-show {
   from {
     opacity: 0;
     transform: scale(0.7);
