@@ -1,7 +1,6 @@
 import { FC, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import styles from './Modal.module.css'
-import cn from 'classnames'
 import { Picture } from '../Picture'
 
 type Props = {
