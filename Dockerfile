@@ -13,11 +13,10 @@ RUN pnpm run build
 
 FROM nginx:alpine
 
+VOLUME /etc/letsencrypt/live/alextecture.com /home/nginx
 #!/bin/sh
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY /etc/letsencrypt/live/alextecture.com/fullchain.pem /home/nginx/fullchain.pem
-COPY /etc/letsencrypt/live/alextecture.com/privkey.pem /home/nginx/privkey.pem
 
 ## Remove default nginx index page
 RUN rm -rf /usr/share/nginx/html/*
