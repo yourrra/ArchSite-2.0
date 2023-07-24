@@ -1,4 +1,4 @@
-.modaloverlay {
+.modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,18 +7,10 @@
   height: 100%;
   align-items: center;
   justify-content: center;
+  animation: overlayShow 700ms ease-in-out;
   backdrop-filter: blur(5px);
-  background-color: rgb(0 0 0 / 50%);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.open {
-  opacity: 1;
-}
-
-.closing {
-  opacity: 0;
+  background-color: rgb(154 154 154 / 70%);
+  inset: 0;
 }
 
 .WrapperModal {
@@ -27,28 +19,51 @@
   align-items: center;
   justify-content: center;
   gap: 25px;
+}
 
-  .Content {
-    height: 800px;
-    box-shadow: var(--black-shadow);
+.Content {
+  height: 800px;
+  animation: contentShow 450ms ease-out;
+  box-shadow: var(--black-shadow);
 
-    @media (width <= 1025px) {
-      height: 500px;
-    }
+  @media (width <= 1025px) {
+    height: 500px;
+  }
+}
+
+.Info {
+  .InfoName {
+    color: var(--black-color);
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
   }
 
-  .Info {
-    .InfoName {
-      color: var(--black-color);
-      font-size: 26px;
-      font-weight: 600;
-      text-align: center;
-    }
+  .InfoYear {
+    color: var(--gray-cokor);
+    font-size: 20px;
+    text-align: center;
+  }
+}
 
-    .InfoYear {
-      color: var(--gray-cokor);
-      font-size: 20px;
-      text-align: center;
-    }
+@keyframes overlayShow {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentShow {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

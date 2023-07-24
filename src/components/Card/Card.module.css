@@ -34,7 +34,7 @@
   transition: all 0.3s;
 }
 
-@media (width <= 426px) {
+@media (width <= 820px) {
   .Info {
     opacity: 1;
     transform: translateY(5px);

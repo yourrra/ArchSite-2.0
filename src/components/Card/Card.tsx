@@ -30,12 +30,6 @@ export const Card = ({ preview, name, year, fullRes }: Props) => {
           alt={name}
           onClick={() => openModal()}
         />
-        {/* <img
-          className={styles.Img}
-          src={preview}
-          alt="Avatar"
-          onClick={() => openModal()}
-        /> */}
         <Modal
           isOpen={isOpen}
           onClose={closeModal}

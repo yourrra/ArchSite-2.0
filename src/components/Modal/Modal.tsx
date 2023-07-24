@@ -2,6 +2,7 @@ import { FC, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import styles from './Modal.module.css'
 import cn from 'classnames'
+import { Picture } from '../Picture'
 
 type Props = {
   name: string
@@ -30,17 +31,11 @@ export const Modal: FC<Props> = ({ name, year, imgBig, isOpen, onClose }) => {
   if (isScreenSmall) return null
 
   return ReactDOM.createPortal(
-    <div
-      className={cn(styles.modaloverlay, {
-        [styles.open]: isOpen,
-        [styles.closing]: !isOpen,
-      })}
-      onClick={onClose}
-    >
+    <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.WrapperModal} onClick={e => e.stopPropagation()}>
-        <img
-          src={imgBig}
-          alt="Avatar"
+        <Picture
+          img={imgBig}
+          alt={name}
           className={styles.Content}
           onClick={e => e.stopPropagation()}
         />
