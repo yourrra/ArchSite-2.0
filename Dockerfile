@@ -27,6 +27,6 @@ RUN apk add certbot
 
 ADD ./init-letsencrypt.sh /
 
-RUN /bin/sh -c "./init-letsencrypt.sh
+RUN ./init-letsencrypt.sh
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
