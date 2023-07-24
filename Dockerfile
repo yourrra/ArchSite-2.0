@@ -16,10 +16,8 @@ FROM nginx:alpine
 #!/bin/sh
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY /root/.acme.sh/alextecture.com_ecc/alextecture.com.cer /home/nginx
-COPY /root/.acme.sh/alextecture.com_ecc/alextecture.com.key /home/nginx
-COPY /root/.acme.sh/alextecture.com_ecc/ca.cer /home/nginx
-COPY /root/.acme.sh/alextecture.com_ecc/fullchain.cer /home/nginx
+COPY /etc/letsencrypt/live/alextecture.com/fullchain.pem /home/nginx
+COPY /etc/letsencrypt/live/alextecture.com/privkey.pem /home/nginx
 
 ## Remove default nginx index page
 RUN rm -rf /usr/share/nginx/html/*
