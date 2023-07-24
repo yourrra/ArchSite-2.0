@@ -63,6 +63,7 @@ import ExtinctionMuseumPr from '../../assets/ExtinctionMuseum-2023_p_600px.jpg'
 import ExtinctionMuseumFl from '../../assets/ExtinctionMuseum-2023_2k.jpg'
 import ResedentialComplexPr from '../../assets/Resedentialcomplex-2023_p_600px.jpg'
 import ResedentialComplexFl from '../../assets/Resedentialcomplex-2023_2k.jpg'
+import.meta.glob('../../assets/*')
 
 export function Main() {
   const previewCard = [
