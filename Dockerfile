@@ -16,6 +16,10 @@ FROM nginx:alpine
 #!/bin/sh
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY /root/.acme.sh/alextecture.com_ecc/alextecture.com.cer /home/nginx
+COPY /root/.acme.sh/alextecture.com_ecc/alextecture.com.key /home/nginx
+COPY /root/.acme.sh/alextecture.com_ecc/ca.cer /home/nginx
+COPY /root/.acme.sh/alextecture.com_ecc/fullchain.cer /home/nginx
 
 ## Remove default nginx index page
 RUN rm -rf /usr/share/nginx/html/*
@@ -23,10 +27,5 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy from the stahg 1
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-RUN apk add wget
-
-RUN wget -O -  https://get.acme.sh | sh -s email=my@example.com
-
-RUN /home/.acme.sh/acme.sh --issue -d alextecture.com -d www.alextecture.com --key-file /etc/letsencrypt/live/alextecture.com/privkey.pem --fullchain-file /etc/letsencrypt/live/alextecture.com/fullchain.pem --reloadcmd "service nginx force-reload"
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
