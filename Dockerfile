@@ -23,8 +23,10 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy from the stahg 1
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-RUN apk add certbot
+RUN apk add wget
 
-RUN certbot --nginx -d alextecture.com -d www.alextecture.com
+RUN wget -O -  https://get.acme.sh | sh -s email=my@example.com
+
+RUN acme.sh --issue -d alextecture.com -d www.alextecture.com --key-file /path/to/keyfile/in/nginx/key.pem --fullchain-file /path/to/fullchain/nginx/cert.pem --reloadcmd "service nginx force-reload"
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
