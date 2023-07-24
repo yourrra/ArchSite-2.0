@@ -13,7 +13,6 @@ RUN pnpm run build
 
 FROM nginx:alpine
 
-VOLUME /etc/letsencrypt/live/alextecture.com /home/nginx
 #!/bin/sh
 
 COPY ./nginx.conf /etc/nginx/nginx.conf
