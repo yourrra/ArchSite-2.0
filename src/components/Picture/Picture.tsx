@@ -27,6 +27,8 @@ export const Picture = memo(
             {...htmlImageElement}
             ref={ref}
           />
+          <source type="image/webp" srcSet={`${img}.webp`} />
+          <source type="image/avif" srcSet={`${img}.avif`} />
         </picture>
       )
     },

@@ -1,7 +1,7 @@
 import { Picture } from '../../components/Picture'
 import { TextBlock } from '../../components/TextBlock'
-import avatar from '../../assets/avatar.jpg'
-import aboutImg from '../../assets/Vavilova-2021_about.jpg'
+import avatar from '../../assets/avatar.jpeg'
+import aboutImg from '../../assets/Vavilova-2021_2k-page.jpeg'
 
 import styles from './About.module.css'
 
