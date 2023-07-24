@@ -27,6 +27,6 @@ RUN apk add wget
 
 RUN wget -O -  https://get.acme.sh | sh -s email=my@example.com
 
-RUN acme.sh --issue -d alextecture.com -d www.alextecture.com --key-file /path/to/keyfile/in/nginx/key.pem --fullchain-file /path/to/fullchain/nginx/cert.pem --reloadcmd "service nginx force-reload"
+RUN acme.sh --issue -d alextecture.com -d www.alextecture.com --key-file /etc/letsencrypt/live/alextecture.com/privkey.pem --fullchain-file /etc/letsencrypt/live/alextecture.com/fullchain.pem --reloadcmd "service nginx force-reload"
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
