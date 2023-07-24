@@ -23,4 +23,10 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy from the stahg 1
 COPY --from=builder /app/dist /usr/share/nginx/html
 
+RUN apk add certbot
+
+ADD ./init-letsencrypt.sh /
+
+RUN /bin/sh -c "./init-letsencrypt.sh
+
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
