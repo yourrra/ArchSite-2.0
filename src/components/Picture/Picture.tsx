@@ -13,8 +13,8 @@ export const Picture = memo(
     ({ variant, img, className = '', alt, ...htmlImageElement }, ref) => {
       return (
         <picture>
-          <source type="image/avif" srcSet={`${img.slice(0, -4)}.avif`} />
-          <source type="image/webp" srcSet={`${img.slice(0, -4)}.webp`} />
+          <source type="image/avif" srcSet={`${img.split(/\./)[0]}.avif`} />
+          <source type="image/webp" srcSet={`${img.split(/\./)[0]}.webp`} />
           <img
             className={cn(
               {
