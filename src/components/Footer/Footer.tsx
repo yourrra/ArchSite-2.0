@@ -5,7 +5,7 @@ import styles from './Footer.module.css'
 
 export const Footer = () => {
   return (
-    <div className="wrapper">
+    <footer className="wrapper">
       <div className={styles.Wrapper}>
         <div className={styles.Footer}>
           <nav>
@@ -45,6 +45,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }

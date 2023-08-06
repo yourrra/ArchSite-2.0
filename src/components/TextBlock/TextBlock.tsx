@@ -13,9 +13,7 @@ export const TextBlock = ({ title, children }: Props) => {
       <Typography className={styles.Title} variant="title">
         {title}
       </Typography>
-      <Typography className={styles.Description} variant="description">
-        {children}
-      </Typography>
+      <Typography variant="description">{children}</Typography>
     </div>
   )
 }
