@@ -7,15 +7,16 @@ type Props = {
 }
 
 export const Portal = ({ isOpen, children }: Props) => {
-  const [container] = useState(() => document.createElement('div'))
+  const [modalRoot] = useState(() => document.createElement('div'))
+  modalRoot.setAttribute('id', 'modal-root')
 
   useEffect(() => {
-    document.body.appendChild(container)
+    document.body.appendChild(modalRoot)
     return () => {
-      document.body.removeChild(container)
+      document.body.removeChild(modalRoot)
       enableScroll()
     }
-  }, [container])
+  }, [modalRoot])
 
   useEffect(() => {
     if (isOpen) {
@@ -31,5 +32,5 @@ export const Portal = ({ isOpen, children }: Props) => {
     document.body.style.overflow = 'auto'
   }
 
-  return ReactDOM.createPortal(children, container)
+  return ReactDOM.createPortal(children, modalRoot)
 }

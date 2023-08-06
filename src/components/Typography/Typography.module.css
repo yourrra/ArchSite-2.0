@@ -1,3 +1,8 @@
+.isH1 {
+  font-size: 70px;
+  font-weight: 600;
+}
+
 .isLogo {
   color: var(--black-color);
   font-size: 20px;

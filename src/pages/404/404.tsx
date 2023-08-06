@@ -1,10 +1,15 @@
-import classes from './404.module.css'
+import { Typography } from '../../components/Typography'
+import styles from './404.module.css'
 
 export function NotFound() {
   return (
-    <div className={classes.notFound}>
-      <h1>404</h1>
-      <p>Извините произошла ошибка</p>
+    <div className={styles.notFound}>
+      <Typography tag="h1" variant="h1">
+        404
+      </Typography>
+      <Typography tag="p" variant="label">
+        <div className={styles.Description}>Sorry, an error occurred</div>
+      </Typography>
     </div>
   )
 }

@@ -5,7 +5,14 @@ import styles from './Typography.module.css'
 
 type Props = PropsWithChildren<
   {
-    variant?: 'logo' | 'title' | 'description' | 'normal' | 'link' | 'label'
+    variant?:
+      | 'h1'
+      | 'logo'
+      | 'title'
+      | 'description'
+      | 'normal'
+      | 'link'
+      | 'label'
     tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
   } & HTMLAttributes<HTMLParagraphElement>
 >
@@ -23,6 +30,7 @@ export const Typography = ({
       className={cn(
         styles.Typography,
         {
+          [styles.isH1]: variant === 'h1',
           [styles.isLogo]: variant === 'logo',
           [styles.isTitle]: variant === 'title',
           [styles.isDescription]: variant === 'description',

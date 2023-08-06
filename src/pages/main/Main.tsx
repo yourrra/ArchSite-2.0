@@ -66,7 +66,7 @@ import ResedentialComplexFl from '../../assets/Resedentialcomplex-2023_2k.jpg'
 import.meta.glob('../../assets/*')
 
 export function Main() {
-  const previewCard = [
+  const data = [
     {
       id: 1,
       preview: WinterCabinPr,
@@ -289,9 +289,10 @@ export function Main() {
   return (
     <div className="Wrapper">
       <div className={styles.Renders}>
-        {previewCard
+        {data
           .map(card => (
             <Card
+              key={card.id}
               preview={card.preview}
               name={card.name}
               year={card.year}
