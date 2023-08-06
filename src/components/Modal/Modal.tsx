@@ -1,7 +1,9 @@
-import { FC, useEffect } from 'react'
-import ReactDOM from 'react-dom'
-import styles from './Modal.module.css'
+import { FC, useState } from 'react'
 import { Picture } from '../Picture'
+import { Portal } from '../Portal'
+import cn from 'classnames'
+
+import styles from './Modal.module.css'
 
 type Props = {
   name: string
@@ -12,38 +14,46 @@ type Props = {
 }
 
 export const Modal: FC<Props> = ({ name, year, imgBig, isOpen, onClose }) => {
-  const modalRoot = document.createElement('div')
-  modalRoot.setAttribute('id', 'modal-root')
+  const [closing, setClosing] = useState(false)
 
-  useEffect(() => {
-    document.body.appendChild(modalRoot)
-
-    return () => {
-      document.body.removeChild(modalRoot)
-    }
-  }, [modalRoot])
+  const handleClose = () => {
+    setClosing(true)
+    setTimeout(() => {
+      onClose()
+      setClosing(false)
+    }, 280)
+  }
 
   if (!isOpen) return null
 
-  const isScreenSmall = window.innerWidth < 450
-
-  if (isScreenSmall) return null
-
-  return ReactDOM.createPortal(
-    <div className={styles.modalOverlay} onClick={onClose}>
-      <div className={styles.WrapperModal} onClick={e => e.stopPropagation()}>
-        <Picture
-          img={imgBig}
-          alt={name}
-          className={styles.Content}
+  return (
+    <Portal isOpen={isOpen}>
+      <div
+        className={cn({
+          [styles.Overlay]: isOpen,
+          [styles.OverlayClose]: closing,
+        })}
+        onClick={handleClose}
+      >
+        <div
+          className={styles.WrapperContent}
           onClick={e => e.stopPropagation()}
-        />
-        <div className={styles.Info}>
-          <div className={styles.InfoName}>{name}</div>
-          <div className={styles.InfoYear}>{year}</div>
+        >
+          <Picture
+            img={imgBig}
+            alt={name}
+            className={cn({
+              [styles.Content]: isOpen,
+              [styles.ContentClose]: closing,
+            })}
+            onClick={e => e.stopPropagation()}
+          />
+          <div className={styles.Info}>
+            <div className={styles.InfoName}>{name}</div>
+            <div className={styles.InfoYear}>{year}</div>
+          </div>
         </div>
       </div>
-    </div>,
-    modalRoot,
+    </Portal>
   )
 }

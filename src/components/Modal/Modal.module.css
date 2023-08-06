@@ -1,4 +1,4 @@
-.modalOverlay {
+.Overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,11 @@
   background-color: rgb(154 154 154 / 70%);
 }
 
-.WrapperModal {
+.OverlayClose {
+  animation: overlay-close 300ms ease-in-out;
+}
+
+.WrapperContent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,6 +32,15 @@
   @media (width <= 1025px) {
     height: 500px;
   }
+
+  @media (width <= 500px) {
+    width: 375px;
+    height: 100%;
+  }
+}
+
+.ContentClose {
+  animation: content-close 300ms ease-out;
 }
 
 .Info {
@@ -55,6 +68,16 @@
   }
 }
 
+@keyframes overlay-close {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes content-show {
   from {
     opacity: 0;
@@ -64,5 +87,16 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes content-close {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.6);
   }
 }
