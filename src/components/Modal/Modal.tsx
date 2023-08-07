@@ -40,6 +40,7 @@ export const Modal: FC<Props> = ({ name, year, imgBig, isOpen, onClose }) => {
           onClick={e => e.stopPropagation()}
         >
           <Picture
+            loading="lazy"
             img={imgBig}
             alt={name}
             className={cn({
