@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useState } from 'react'
+import { FC, useState } from 'react'
 import { Picture } from '../Picture'
 import { Portal } from '../Portal'
 import cn from 'classnames'
