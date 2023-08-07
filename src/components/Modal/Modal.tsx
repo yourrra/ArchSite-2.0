@@ -48,7 +48,12 @@ export const Modal: FC<Props> = ({ name, year, imgBig, isOpen, onClose }) => {
             })}
             onClick={e => e.stopPropagation()}
           />
-          <div className={styles.Info}>
+          <div
+            className={cn({
+              [styles.Info]: isOpen,
+              [styles.InfoClose]: closing,
+            })}
+          >
             <div className={styles.InfoName}>{name}</div>
             <div className={styles.InfoYear}>{year}</div>
           </div>

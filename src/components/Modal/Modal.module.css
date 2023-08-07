@@ -19,8 +19,6 @@
 .WrapperContent {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 25px;
 }
 
@@ -44,6 +42,8 @@
 }
 
 .Info {
+  animation: content-show 450ms ease-out;
+
   .InfoName {
     color: var(--black-color);
     font-size: 26px;
@@ -56,6 +56,10 @@
     font-size: 20px;
     text-align: center;
   }
+}
+
+.InfoClose {
+  animation: content-close 300ms ease-out;
 }
 
 @keyframes overlay-show {
