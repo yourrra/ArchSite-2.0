@@ -47,8 +47,8 @@ import OasisPr from '../../assets/Oasis-2022_p_600px.jpg'
 import OasisFl from '../../assets/Oasis-2022_2k.jpg'
 import ObydenskiPr from '../../assets/Obydenskiy-2022_p_600px.jpg'
 import ObydenskiFl from '../../assets/Obydenskiy-2022_2k.jpg'
-import OfficeCenterPr from '../../assets/Office-center-2022_p_600px.jpg'
-import OfficeCenterFl from '../../assets/Office-center-2022_2k.jpg'
+import OfficeCenterPr from '../../assets/Office_center_p600.jpg'
+import OfficeCenterFl from '../../assets/Office_center_2k.jpg'
 import SnakePr from '../../assets/Snake-2022_p_600px.jpg'
 import SnakeFl from '../../assets/Snake-2022_2k.jpg'
 import StreetsOfMoscowPr from '../../assets/StreetsofMoscow-2022_p_600px.jpg'
@@ -63,6 +63,12 @@ import ExtinctionMuseumPr from '../../assets/ExtinctionMuseum-2023_p_600px.jpg'
 import ExtinctionMuseumFl from '../../assets/ExtinctionMuseum-2023_2k.jpg'
 import ResedentialComplexPr from '../../assets/Resedentialcomplex-2023_p_600px.jpg'
 import ResedentialComplexFl from '../../assets/Resedentialcomplex-2023_2k.jpg'
+import PrismPr from '../../assets/Prism_p600.jpg'
+import PrismFl from '../../assets/Prism_2k.jpg'
+import GrasslandHousePr from '../../assets/Grassland_House_p600.jpg'
+import GrasslandHouseFl from '../../assets/Grassland_House_2k.jpg'
+import RamseyRoadPr from '../../assets/Ramsey_Road_p600.jpg'
+import RamseyRoadFl from '../../assets/Ramsey_Road_2k.jpg'
 import.meta.glob('../../assets/*')
 
 export function Main() {
@@ -229,13 +235,6 @@ export function Main() {
       fullRes: ObydenskiFl,
     },
     {
-      id: 24,
-      preview: OfficeCenterPr,
-      name: 'Office Center',
-      year: 2022,
-      fullRes: OfficeCenterFl,
-    },
-    {
       id: 25,
       preview: SnakePr,
       name: 'Snake',
@@ -283,6 +282,34 @@ export function Main() {
       name: 'Streets of Moscow',
       year: 2022,
       fullRes: StreetsOfMoscowFl,
+    },
+    {
+      id: 32,
+      preview: OfficeCenterPr,
+      name: 'Office Center',
+      year: 2022,
+      fullRes: OfficeCenterFl,
+    },
+    {
+      id: 33,
+      preview: PrismPr,
+      name: 'Prism',
+      year: 2023,
+      fullRes: PrismFl,
+    },
+    {
+      id: 34,
+      preview: GrasslandHousePr,
+      name: 'Grassland House',
+      year: 2023,
+      fullRes: GrasslandHouseFl,
+    },
+    {
+      id: 35,
+      preview: RamseyRoadPr,
+      name: 'Ramsey Road',
+      year: 2023,
+      fullRes: RamseyRoadFl,
     },
   ]
 
