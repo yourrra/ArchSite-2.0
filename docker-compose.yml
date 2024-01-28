@@ -1,7 +1,20 @@
 version: '3.7'
 
 services:
+  nginx:
+    image: nginx:1.19.8-alpine
+    container_name: nginx-1.19.8-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - www-html:/var/www/html
+      - ./nginx-conf.d:/etc/nginx/conf.d
+    networks:
+      - net
   web-app:
+    depends_on:
+      - nginx
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,6 +23,18 @@ services:
       - 443:443
     networks:
       - net
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    container_name: certbot
+    volumes:
+      - etc-letsencrypt:/etc/letsencrypt
+      - www-html:/var/www/html
+    command: certonly --webroot --webroot-path=/var/www/html --email alextecture@yandex.ru --agree-tos --no-eff-email --staging -d alextecture.com
+volumes:
+  www-html:
+  etc-letsencrypt:
 networks:
   net:
     driver: bridge
