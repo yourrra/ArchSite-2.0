@@ -9,6 +9,8 @@ services:
     networks:
       - net
     volumes:
+      - /etc/letsencrypt/live/alextecture.com-0001/fullchain.pem:/etc/letsencrypt/live/alextecture.com-0001/fullchain.pem
+      - /etc/letsencrypt/live/alextecture.com-0001/privkey.pem:/etc/letsencrypt/live/alextecture.com-0001/privkey.pem
       - ./nginx.conf:/etc/nginx/nginx.conf
       # - ./ssl-options.conf:/etc/nginx/conf.d/ssl-option.conf
       - soureces:/etc/letsencrypt
