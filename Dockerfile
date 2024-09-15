@@ -9,3 +9,5 @@ RUN npm i pnpm -g
 RUN pnpm i 
 
 RUN pnpm run build
+
+COPY dist /usr/share/nginx/html

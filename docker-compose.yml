@@ -27,15 +27,6 @@ services:
       dockerfile: Dockerfile
     volumes:
       - soureces:/data/dist
-  # certbot:
-  #   image: certbot/certbot
-  #   depends_on:
-  #     - nginx
-  #   container_name: certbot
-  #   volumes:
-  #     - soureces:/etc/letsencrypt
-  #     - soureces:/var/www/html
-    # command: certonly --webroot --webroot-path=/var/www/html --email alextecture@yandex.ru --agree-tos --no-eff-email --staging -d alextecture.com
 volumes:
   soureces:
     external: true
