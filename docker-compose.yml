@@ -10,6 +10,7 @@ services:
       - net
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl-options.conf:/etc/nginx/conf.d/ssl-option.conf
       - soureces:/etc/letsencrypt
       - soureces:/var/www/certbot
       - soureces:/usr/share/nginx/html
@@ -24,15 +25,15 @@ services:
       dockerfile: Dockerfile
     volumes:
       - soureces:/data/dist
-  certbot:
-    image: certbot/certbot
-    depends_on:
-      - nginx
-    container_name: certbot
-    volumes:
-      - soureces:/etc/letsencrypt
-      - soureces:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email alextecture@yandex.ru --agree-tos --no-eff-email --staging -d alextecture.com
+  # certbot:
+  #   image: certbot/certbot
+  #   depends_on:
+  #     - nginx
+  #   container_name: certbot
+  #   volumes:
+  #     - soureces:/etc/letsencrypt
+  #     - soureces:/var/www/html
+    # command: certonly --webroot --webroot-path=/var/www/html --email alextecture@yandex.ru --agree-tos --no-eff-email --staging -d alextecture.com
 volumes:
   soureces:
     external: true
