@@ -10,7 +10,7 @@ services:
       - net
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./ssl-options.conf:/etc/nginx/conf.d/ssl-option.conf
+      - ./ssl-options.conf:./ssl-option.conf
       - soureces:/etc/letsencrypt
       - soureces:/var/www/certbot
       - soureces:/usr/share/nginx/html
