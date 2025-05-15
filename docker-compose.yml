@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 
 services:
   nginx:
@@ -8,6 +8,8 @@ services:
       - web-app
     networks:
       - net
+    volumes_from:
+      - web-app
     volumes:
       - /etc/letsencrypt/live/alextecture.com/fullchain.pem:/etc/letsencrypt/live/alextecture.com/fullchain.pem
       - /etc/letsencrypt/live/alextecture.com/privkey.pem:/etc/letsencrypt/live/alextecture.com/privkey.pem
