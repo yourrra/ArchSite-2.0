@@ -15,7 +15,7 @@ services:
       - soureces:/etc/letsencrypt
       - soureces:/var/www/certbot
       - soureces:/usr/share/nginx/html
-      - ./dist/:/data/dist
+      - soureces:/data/dist/
     ports:
       - 80:80
       - 443:443
@@ -24,7 +24,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./dist/:/data/dist
+      - soureces:/data/dist/
 volumes:
   soureces:
     external: true
