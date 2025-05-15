@@ -58,7 +58,12 @@ export function Contact() {
           </TextBlock>
         </div>
         <div className={styles.ImgBlock}>
-          <img className={styles.Img} src={contactImg} alt="Samara" />
+          <img
+            className={styles.Img}
+            src={contactImg}
+            alt="Samara"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>

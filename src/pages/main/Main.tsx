@@ -1,4 +1,5 @@
 import { Card } from '../../components/Card'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import styles from './Main.module.css'
 
 import WinterCabinPr from '../../assets/Winter-cabin-2019_p_600px.jpg'
@@ -69,9 +70,53 @@ import GrasslandHousePr from '../../assets/Grassland_House_p600.jpg'
 import GrasslandHouseFl from '../../assets/Grassland_House_2k.jpg'
 import RamseyRoadPr from '../../assets/Ramsey_Road_p600.jpg'
 import RamseyRoadFl from '../../assets/Ramsey_Road_2k.jpg'
+
+import WoodEchoPr from '../../assets/WoodEcho_600.jpg'
+import WoodEchoFl from '../../assets/WoodEcho_2k.jpg'
+import KrestovnikovyTerracePr from '../../assets/KrestovnikovyTerrace_600.jpg'
+import KrestovnikovyTerraceFl from '../../assets/KrestovnikovyTerrace_2k.jpg'
+import PavePr from '../../assets/Pave_600.jpg'
+import PaveFl from '../../assets/Pave_2k.jpg'
+import BaltschugPr from '../../assets/Baltschug_600.jpg'
+import BaltschugFl from '../../assets/Baltschug_2k.jpg'
+import BellPr from '../../assets/BELL_600.jpg'
+import BellFl from '../../assets/BELL_2k.jpg'
+import TulumPr from '../../assets/Tulum_600.jpg'
+import TulumFl from '../../assets/Tulum_2k.jpg'
+import ShiftPr from '../../assets/Shift_600.jpg'
+import ShiftFl from '../../assets/Shift_2k.jpg'
+import TabakovPr from '../../assets/Tabakov_600.jpg'
+import TabakovFl from '../../assets/Tabakov_2k.jpg'
+import PatrikPr from '../../assets/Patrik_600.jpg'
+import PatrikFl from '../../assets/Patrik_2k.jpg'
+import MarcoPoloPr from '../../assets/MarcoPolo_600.jpg'
+import MarcoPoloFl from '../../assets/MarcoPolo_2k.jpg'
+import KrestovnikovyPr from '../../assets/Krestovnikovy_600.jpg'
+import KrestovnikovyFl from '../../assets/Krestovnikovy_2k.jpg'
+import KharitonyevskyPr from '../../assets/Kharitonyevsky_600.jpg'
+import KharitonyevskyFl from '../../assets/Kharitonyevsky_2k.jpg'
+import JangalaPr from '../../assets/Jangala_600.jpg'
+import JangalaFl from '../../assets/Jangala_2k.jpg'
+import ForestKeeperPr from '../../assets/ForestKeeper_600.jpg'
+import ForestKeeperFl from '../../assets/ForestKeeper_2k.jpg'
+import VeilPr from '../../assets/VEIL_600.jpg'
+import VeilFl from '../../assets/VEIL_2k.jpg'
+import OrdynkaPr from '../../assets/Ordynka_600.jpg'
+import OrdynkaFl from '../../assets/Ordynka_2k.jpg'
+import PalashevskyLanePr from '../../assets/PalashevskyLane_600.jpg'
+import PalashevskyLaneFl from '../../assets/PalashevskyLane_2k.jpg'
+
 import.meta.glob('../../assets/*')
 
+const CARD_WIDTH = 350
+const CARD_HEIGHT = 350
+const GAP = 50
+
 export function Main() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [visibleRange, setVisibleRange] = useState({ start: 0, end: 10 })
+  const [columns, setColumns] = useState(3)
+
   const data = [
     {
       id: 1,
@@ -311,23 +356,238 @@ export function Main() {
       year: 2023,
       fullRes: RamseyRoadFl,
     },
-  ]
+    {
+      id: 36,
+      preview: WoodEchoPr,
+      name: 'Wood Echo',
+      year: 2024,
+      fullRes: WoodEchoFl,
+    },
+    {
+      id: 37,
+      preview: KrestovnikovyTerracePr,
+      name: 'Krestovnikovy Terrace',
+      year: 2024,
+      fullRes: KrestovnikovyTerraceFl,
+    },
+    {
+      id: 38,
+      preview: PavePr,
+      name: 'Pave',
+      year: 2024,
+      fullRes: PaveFl,
+    },
+    {
+      id: 39,
+      preview: BaltschugPr,
+      name: 'Baltschug',
+      year: 2024,
+      fullRes: BaltschugFl,
+    },
+    {
+      id: 40,
+      preview: BellPr,
+      name: 'BELL',
+      year: 2024,
+      fullRes: BellFl,
+    },
+    {
+      id: 41,
+      preview: TulumPr,
+      name: 'Tulum',
+      year: 2024,
+      fullRes: TulumFl,
+    },
+    {
+      id: 42,
+      preview: ShiftPr,
+      name: 'Shift',
+      year: 2024,
+      fullRes: ShiftFl,
+    },
+    {
+      id: 43,
+      preview: TabakovPr,
+      name: 'Tabakov',
+      year: 2024,
+      fullRes: TabakovFl,
+    },
+    {
+      id: 44,
+      preview: PatrikPr,
+      name: 'Patrik',
+      year: 2024,
+      fullRes: PatrikFl,
+    },
+    {
+      id: 45,
+      preview: MarcoPoloPr,
+      name: 'Marco Polo',
+      year: 2024,
+      fullRes: MarcoPoloFl,
+    },
+    {
+      id: 46,
+      preview: KrestovnikovyPr,
+      name: 'Krestovnikovy',
+      year: 2024,
+      fullRes: KrestovnikovyFl,
+    },
+    {
+      id: 47,
+      preview: KharitonyevskyPr,
+      name: 'Kharitonyevsky',
+      year: 2024,
+      fullRes: KharitonyevskyFl,
+    },
+    {
+      id: 48,
+      preview: JangalaPr,
+      name: 'Jangala',
+      year: 2024,
+      fullRes: JangalaFl,
+    },
+    {
+      id: 49,
+      preview: ForestKeeperPr,
+      name: 'Forest Keeper',
+      year: 2024,
+      fullRes: ForestKeeperFl,
+    },
+    {
+      id: 50,
+      preview: VeilPr,
+      name: 'VEIL',
+      year: 2024,
+      fullRes: VeilFl,
+    },
+    {
+      id: 51,
+      preview: OrdynkaPr,
+      name: 'Ordynka',
+      year: 2024,
+      fullRes: OrdynkaFl,
+    },
+    {
+      id: 52,
+      preview: PalashevskyLanePr,
+      name: 'Ordynka',
+      year: 2024,
+      fullRes: PalashevskyLaneFl,
+    },
+  ].reverse()
+
+  // Обновляем количество колонок в зависимости от ширины контейнера
+  const updateColumns = useCallback(() => {
+    if (!containerRef.current) return
+
+    const width = containerRef.current.clientWidth
+    if (width <= 500) setColumns(1)
+    else if (width <= 1025) setColumns(2)
+    else setColumns(3)
+  }, [])
+
+  useEffect(() => {
+    updateColumns()
+    window.addEventListener('resize', updateColumns)
+    return () => window.removeEventListener('resize', updateColumns)
+  }, [updateColumns])
+
+  // Высота всего контента с учетом отступов и карточек
+  const totalRows = Math.ceil(data.length / columns)
+  const totalHeight = totalRows * (CARD_HEIGHT + GAP) - GAP
+
+  // Функция для обновления видимого диапазона по скроллу
+  const onScroll = () => {
+    if (!containerRef.current) return
+
+    const scrollTop = containerRef.current.scrollTop
+    const containerHeight = containerRef.current.clientHeight
+
+    // Вычисляем верхний и нижний индекс видимого ряда + запас в 1 ряд сверху и снизу
+    const startRow = Math.max(
+      Math.floor(scrollTop / (CARD_HEIGHT + GAP)) - 1,
+      0,
+    )
+    const endRow = Math.min(
+      Math.ceil((scrollTop + containerHeight) / (CARD_HEIGHT + GAP)) + 1,
+      totalRows,
+    )
+
+    const startIndex = startRow * columns
+    const endIndex = Math.min(endRow * columns, data.length)
+
+    setVisibleRange({ start: startIndex, end: endIndex })
+  }
+
+  useEffect(() => {
+    const current = containerRef.current
+    if (!current) return
+    onScroll() // инициализация видимого диапазона
+    current.addEventListener('scroll', onScroll)
+    return () => current.removeEventListener('scroll', onScroll)
+  }, [columns, data.length])
+
+  // Карточки для рендера
+  const visibleCards = data.slice(visibleRange.start, visibleRange.end)
 
   return (
-    <div className="Wrapper">
-      <div className={styles.Renders}>
-        {data
-          .map(card => (
-            <Card
+    <div ref={containerRef} className={styles.MainWrapper}>
+      <div
+        className={styles.Renders}
+        style={{
+          position: 'relative',
+          height: totalHeight,
+          width: '100%',
+          display: 'grid',
+          gridTemplateColumns: `repeat(${columns}, ${CARD_WIDTH}px)`,
+          gap: `${GAP}px`,
+        }}
+      >
+        {visibleCards.map((card, index) => {
+          const absoluteIndex = visibleRange.start + index
+          const row = Math.floor(absoluteIndex / columns)
+          const col = absoluteIndex % columns
+
+          return (
+            <div
               key={card.id}
-              preview={card.preview}
-              name={card.name}
-              year={card.year}
-              fullRes={card.fullRes}
-            />
-          ))
-          .reverse()}
+              style={{
+                position: 'absolute',
+                top: row * (CARD_HEIGHT + GAP),
+                left: col * (CARD_WIDTH + GAP),
+                width: CARD_WIDTH,
+                height: CARD_HEIGHT,
+              }}
+            >
+              <Card
+                preview={card.preview}
+                name={card.name}
+                year={card.year}
+                fullRes={card.fullRes}
+              />
+            </div>
+          )
+        })}
       </div>
     </div>
   )
+
+  // return (
+  //   <div className="Wrapper">
+  //     <div className={styles.Renders}>
+  //       {data
+  //         .map(card => (
+  //           <Card
+  //             key={card.id}
+  //             preview={card.preview}
+  //             name={card.name}
+  //             year={card.year}
+  //             fullRes={card.fullRes}
+  //           />
+  //         ))
+  //         .reverse()}
+  //     </div>
+  //   </div>
+  // )
 }

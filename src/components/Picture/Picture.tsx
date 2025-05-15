@@ -24,8 +24,9 @@ export const Picture = memo(
             )}
             src={img}
             alt={alt}
-            {...htmlImageElement}
             ref={ref}
+            loading="lazy"
+            {...htmlImageElement}
           />
         </picture>
       )

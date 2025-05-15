@@ -2,6 +2,9 @@
   min-height: calc(100vh - 122px);
   padding-top: 100px;
   padding-bottom: 50px;
+  overflow-y: auto;
+  height: 100vh;
+  position: relative;
 
   @media (width >= 768px) {
     min-height: calc(100vh - 72px);

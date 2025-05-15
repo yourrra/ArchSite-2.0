@@ -1,6 +1,6 @@
 import { Picture } from '../../components/Picture'
 import { TextBlock } from '../../components/TextBlock'
-import avatar from '../../assets/avatar.jpeg'
+import avatar from '../../assets/avatar_2.jpg'
 import aboutImg from '../../assets/Vavilova-2021_2k-page.jpeg'
 
 import styles from './About.module.css'
@@ -28,7 +28,12 @@ export function About() {
           </div>
         </div>
         <div className={styles.ImgBlock}>
-          <img className={styles.Img} src={aboutImg} alt="Vavilova" />
+          <img
+            className={styles.Img}
+            src={aboutImg}
+            alt="Vavilova"
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
