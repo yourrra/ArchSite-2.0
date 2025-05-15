@@ -1,5 +1,5 @@
 import { Card } from '../../components/Card'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import styles from './Main.module.css'
 
 import WinterCabinPr from '../../assets/Winter-cabin-2019_p_600px.jpg'
