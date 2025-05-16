@@ -4,6 +4,7 @@ services:
   nginx:
     container_name: nginx
     image: nginx:latest
+    restart: always
     depends_on:
       - web-app
     networks:
@@ -20,6 +21,7 @@ services:
       - 80:80
       - 443:443
   web-app:
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
