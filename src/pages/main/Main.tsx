@@ -573,6 +573,7 @@ export function Main() {
     </div>
   )
 
+  // Без виртуализации
   // return (
   //   <div className="Wrapper">
   //     <div className={styles.Renders}>
