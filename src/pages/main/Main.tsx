@@ -471,7 +471,7 @@ export function Main() {
     {
       id: 52,
       preview: PalashevskyLanePr,
-      name: 'Ordynka',
+      name: 'Palashevsky Lane',
       year: 2024,
       fullRes: PalashevskyLaneFl,
     },
