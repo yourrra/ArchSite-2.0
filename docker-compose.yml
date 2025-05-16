@@ -29,7 +29,6 @@ services:
       - soureces:/data/
 volumes:
   soureces:
-    driver: local
     external: true
 networks:
   net:
