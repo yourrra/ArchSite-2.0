@@ -8,8 +8,6 @@ services:
       - web-app
     networks:
       - net
-    volumes_from:
-      - web-app
     volumes:
       - /etc/letsencrypt/live/alextecture.com/fullchain.pem:/etc/letsencrypt/live/alextecture.com/fullchain.pem
       - /etc/letsencrypt/live/alextecture.com/privkey.pem:/etc/letsencrypt/live/alextecture.com/privkey.pem
@@ -29,7 +27,7 @@ services:
       - soureces:/data/
 volumes:
   soureces:
-    external: true
+    driver: local
 networks:
   net:
     driver: bridge
