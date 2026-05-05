@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   nginx:
-    container_name: nginx
+    container_name: nginx2
     image: nginx:latest
     restart: always
     depends_on:
@@ -10,16 +10,29 @@ services:
     networks:
       - net
     volumes:
-      - /etc/letsencrypt/live/alextecture.com/fullchain.pem:/etc/letsencrypt/live/alextecture.com/fullchain.pem
-      - /etc/letsencrypt/live/alextecture.com/privkey.pem:/etc/letsencrypt/live/alextecture.com/privkey.pem
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      - soureces:/etc/letsencrypt
-      - soureces:/var/www/certbot
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl-option.conf:/etc/nginx/ssl-option.conf:ro
       - soureces:/usr/share/nginx/html
       - soureces:/data/
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - certbot-www:/var/www/certbot
     ports:
       - 80:80
       - 443:443
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - certbot-www:/var/www/certbot
+    entrypoint: >
+      sh -c "while :; do
+        certbot renew --webroot -w /var/www/certbot --quiet;
+        sleep 12h;
+      done"
+    restart: always
+
   web-app:
     restart: always
     build:
@@ -27,9 +40,13 @@ services:
       dockerfile: Dockerfile
     volumes:
       - soureces:/data/
+
 volumes:
   soureces:
     driver: local
+  certbot-www:
+    driver: local
+
 networks:
   net:
     driver: bridge
